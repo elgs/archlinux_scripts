@@ -6,7 +6,7 @@ This script will help to automate the installation of Arch Linux. Please note th
 
 ### Before you start
 
-## <span style="color:red;"> PLEASE NOTE THIS SCRIPT WILL WIPE OUT ALL DATA ON YOUR HARD DRIVE, SO DO IT AT YOUR OWN RISK! </span>
+## !!!PLEASE NOTE THIS SCRIPT WILL WIPE OUT ALL DATA ON YOUR HARD DRIVE, SO DO IT AT YOUR OWN RISK!!!
 
 ### Where it starts
 

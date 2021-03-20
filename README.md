@@ -4,6 +4,10 @@
 
 This script will help to automate the installation of Arch Linux. Please note the purpose of this script is to reduce typing on the keyboard. This is not a general purpose Arch Linux installer. So please feel free to tweak it as you need if you find it helpful.
 
+### Before you start
+
+## <span style="color:red;"> PLEASE NOTE THIS SCRIPT WILL WIPE OUT ALL DATA ON YOUR HARD DRIVE, SO DO IT AT YOUR OWN RISK! </span>
+
 ### Where it starts
 
 `install_archlinux.sh` has the following assumptions:

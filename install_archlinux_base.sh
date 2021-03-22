@@ -80,4 +80,4 @@ rm -rf /mnt/root/part2.sh
 shutdown -h now
 
 # unplug installer usb
-# restatt
+# restart

@@ -17,7 +17,7 @@ This script will help to automate the installation of Arch Linux. Please note th
 3. an empty disk without any partitions;
 4. Internet connection;
 
-I found it easier to do the job to run this script from an ssh client. So after booted from the Arch Linux iso:
+I found it easier to do the job by runing this script from an ssh client. After booted from the Arch Linux iso:
 
 ```bash
 # systemctl start sshd
@@ -45,7 +45,7 @@ export hostname=arch
 
 #### disk partitioning
 
-1GB for `/boot`, and the rest for `/`. If you don't like this idea, just tweak this line, or remove this line and do your partition yourself at all.
+1GB for `/boot`, and the rest for `/`. If you don't like this idea, just tweak this line, or remove this line and do the partitioning yourself at all.
 
 ```bash
 echo -e "g\nn\n\n\n+1G\nn\n\n\n\nt\n1\n1\np\nw\nq\n" | fdisk $disk

@@ -54,7 +54,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 systemctl enable NetworkManager
 
-pacman -Syyu --noconfirm
+pacman -Syu --noconfirm
 
 useradd -m $username
 usermod -aG wheel $username
@@ -67,7 +67,7 @@ echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 echo "alias ls='ls --color=auto'" >> /etc/profile
 echo "alias ll='ls -alF'" >> /etc/profile
 
-sudo -H -u $username bash -c "git clone https://aur.archlinux.org/yay.git /tmp/yay;cd /tmp/yay/;makepkg -si --noconfirm;yay -Syyu --noconfirm"
+sudo -H -u $username bash -c "git clone https://aur.archlinux.org/yay.git /tmp/yay;cd /tmp/yay/;makepkg -si --noconfirm;yay -Syu --noconfirm"
 
 exit
 

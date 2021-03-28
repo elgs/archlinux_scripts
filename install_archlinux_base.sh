@@ -1,11 +1,11 @@
 #!/bin/bash
 
-export disk=/dev/sda
-export boot_partition=/dev/sda1
-export root_partition=/dev/sda2
-export root_password=root
-export username=user
-export user_password=user
+export disk=/dev/nvme1n1
+export boot_partition=/dev/nvme1n1p1
+export root_partition=/dev/nvme1n1p2
+export root_password=scandisk
+export username=elgs
+export user_password=sam
 export hostname=arch
 
 # /boot 1GB
@@ -23,7 +23,7 @@ reflector -c "US" -f 12 -l 10 -n 12 --save /etc/pacman.d/mirrorlist
 
 mount $root_partition /mnt
 
-pacstrap /mnt base base-devel linux linux-firmware vim git htop networkmanager
+pacstrap /mnt base base-devel linux linux-firmware vim git htop networkmanager ttf-dejavu
 
 genfstab -U /mnt >> /mnt/etc/fstab
 echo "tmpfs	/home/$username/.cache	tmpfs	noatime,nodev,nosuid	0	0" >> /mnt/etc/fstab

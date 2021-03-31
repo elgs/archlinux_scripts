@@ -3,9 +3,9 @@
 export disk=/dev/nvme1n1
 export boot_partition=/dev/nvme1n1p1
 export root_partition=/dev/nvme1n1p2
-export root_password=scandisk
-export username=elgs
-export user_password=sam
+export root_password=root
+export username=user
+export user_password=user
 export hostname=arch
 
 # /boot 1GB

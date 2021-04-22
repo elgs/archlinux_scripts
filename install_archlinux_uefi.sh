@@ -1,8 +1,8 @@
 #!/bin/bash
 
-export disk=/dev/nvme1n1
-export boot_partition=/dev/nvme1n1p1
-export root_partition=/dev/nvme1n1p2
+export disk=/dev/nvme0n1
+export boot_partition=/dev/nvme0n1p1
+export root_partition=/dev/nvme0n1p2
 export root_password=root
 export username=user
 export user_password=user
@@ -10,7 +10,7 @@ export hostname=arch
 
 # /boot 1GB
 # / rest
-echo -e "g\nn\n\n\n+1G\nn\n\n\n\nt\n1\n1\np\nw\nq\n" | fdisk $disk
+echo -e "g\nn\n\n\n+1G\nn\n\n\n\nt\n1\n1\nw\n" | fdisk $disk
 mkfs.fat -F32 $boot_partition
 mkfs.ext4 $root_partition
 

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# not working yet
+
 export disk=/dev/nvme0n1
 export root_partition=/dev/nvme0n1p1
 export root_password=root

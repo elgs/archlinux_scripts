@@ -31,7 +31,7 @@ echo $hostname > /etc/hostname
 echo -e "${root_password}\n${root_password}" | passwd
 
 pacman -S grub --noconfirm
-grub-install $disk
+grub-install --target=i386-pc $disk
 grub-mkconfig -o /boot/grub/grub.cfg
 
 systemctl enable NetworkManager

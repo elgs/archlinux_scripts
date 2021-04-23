@@ -1,15 +1,13 @@
 #!/bin/bash
 
-# not working yet
-
-export disk=/dev/nvme0n1
-export root_partition=/dev/nvme0n1p1
+export disk=/dev/sda
+export root_partition=/dev/sda1
 export root_password=root
 export username=user
 export user_password=user
 export hostname=arch
 
-echo -e "g\nn\n\n\n\nw\n" | fdisk $disk
+echo -e "o\nn\n\n\n\n\nw\n" | fdisk $disk
 mkfs.ext4 $root_partition
 
 pacman -Syy
@@ -33,7 +31,7 @@ echo $hostname > /etc/hostname
 echo -e "${root_password}\n${root_password}" | passwd
 
 pacman -S grub --noconfirm
-grub-install --target=i386-pc $disk
+grub-install $disk
 grub-mkconfig -o /boot/grub/grub.cfg
 
 systemctl enable NetworkManager

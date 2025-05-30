@@ -28,12 +28,11 @@ I found it easier to do the job by runing this script from an ssh client. After 
 Setup Wi-Fi with `iwctl`.
 
 ```bash
-iwctl
-
+# iwctl
 [iwd]# station wlan0 connect SSID
-
-# or 
-
+```
+or 
+```bash
 [iwd]# station name connect-hidden SSID
 ```
 https://wiki.archlinux.org/title/Iwd

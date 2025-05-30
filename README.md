@@ -10,7 +10,7 @@ This script will help to automate the installation of Arch Linux. Please note th
 
 ### Where it starts
 
-`install_archlinux.sh` has the following assumptions:
+`install_archlinux_uefi.sh` and `install_archlinux_bios` have the following assumptions:
 
 1. UEFI;
 2. booted into the latest iso image downloaded from Arch Linux website;
@@ -24,6 +24,19 @@ I found it easier to do the job by runing this script from an ssh client. After 
 # passwd
 # ip a
 ```
+
+Setup Wi-Fi with `iwctl`.
+
+```bash
+iwctl
+
+[iwd]# station wlan0 connect SSID
+
+# or 
+
+[iwd]# station name connect-hidden SSID
+```
+https://wiki.archlinux.org/title/Iwd
 
 1. start sshd;
 2. set root password;
@@ -71,3 +84,11 @@ This script will shutdown your computer after it's done. Once it's shutdown, you
 ### Next steps
 
 This is the end of the installation of Arch Linux, but the start of the setup. Next things you want to do might be to install a desktop environment, which is not covered in this script.
+
+### Setup NetworkManager for Wi-Fi
+
+```bash
+nmcli device wifi connect SSID_or_BSSID --ask
+```
+
+https://wiki.archlinux.org/title/NetworkManager

@@ -15,7 +15,7 @@ pacman -S reflector --noconfirm
 reflector -c "US" -f 12 -l 10 -n 12 --save /etc/pacman.d/mirrorlist
 
 mount $root_partition /mnt
-pacstrap /mnt base base-devel linux linux-firmware vim git htop networkmanager ttf-dejavu
+pacstrap /mnt base base-devel linux linux-firmware vim git htop networkmanager grub openssh
 
 genfstab -U /mnt >> /mnt/etc/fstab
 echo "tmpfs	/home/$username/.cache	tmpfs	noatime,nodev,nosuid	0 0" >> /mnt/etc/fstab
@@ -30,11 +30,11 @@ export LANG=en_US.UTF-8
 echo $hostname > /etc/hostname
 echo -e "${root_password}\n${root_password}" | passwd
 
-pacman -S grub --noconfirm
 grub-install $disk
 grub-mkconfig -o /boot/grub/grub.cfg
 
 systemctl enable NetworkManager
+systemctl enable sshd
 pacman -Syu --noconfirm
 useradd -m $username
 usermod -aG wheel $username

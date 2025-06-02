@@ -22,7 +22,8 @@ echo "tmpfs	/home/$username/.cache	tmpfs	noatime,nodev,nosuid	0 0" >> /mnt/etc/f
 
 cat <<EOF > /mnt/root/part2.sh
 #!/bin/bash
-timedatectl set-timezone America/Los_Angeles
+# timedatectl set-timezone America/Los_Angeles
+ln -sf /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
 echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
 locale-gen
 echo LANG=en_US.UTF-8 > /etc/locale.conf

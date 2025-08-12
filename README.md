@@ -91,3 +91,4 @@ nmcli device wifi connect SSID_or_BSSID --ask
 ```
 
 https://wiki.archlinux.org/title/NetworkManager
+https://askubuntu.com/questions/947965/how-to-trigger-network-manager-autoconnect
